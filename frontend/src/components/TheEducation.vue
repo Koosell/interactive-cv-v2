@@ -1,13 +1,18 @@
 <script setup>
+import { ref, onMounted } from 'vue';
+import axios from 'axios';
 import SectionTitle from './SectionTitle.vue';
 
-// Data ini akan kita pindah ke backend nanti [cite: 299]
-const educationHistory = [
-  { id: 1, period: '2023 - Sekarang', institution: 'Universitas Amikom Yogyakarta', major: 'S1 Teknik Informatika' },
-  { id: 2, period: '2020 - 2023', institution: 'SMK Negeri Jumo', major: 'MULTIMEDIA' },
-  { id: 3, period: '2017 - 2020', institution: 'SMP Negeri 1 Jumo', major: 'Umum' },
-  { id: 4, period: '2011 - 2017', institution: 'SD Negeri Jumo', major: 'Umum' }
-];
+const educationHistory = ref([]);
+
+onMounted(async () => {
+  try {
+    const response = await axios.get('http://localhost:3000/api/education');
+    educationHistory.value = response.data;
+  } catch (error) {
+    console.error('Gagal mengambil data pendidikan:', error);
+  }
+});
 </script>
 
 <template>

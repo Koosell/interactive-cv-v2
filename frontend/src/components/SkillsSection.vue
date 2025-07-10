@@ -1,29 +1,24 @@
 <script setup>
-import SectionTitle from './SectionTitle.vue';
+import { ref, onMounted } from 'vue';
+import axios from 'axios';
+import TheSectionTitle from './SectionTitle.vue'; // Menggunakan nama file yang sudah diperbaiki
 
-const skills = [
-  { name: 'Vue.js', level: 'Mahir' },
-  { name: 'JavaScript', level: 'Mahir' },
-  { name: 'Tailwind CSS', level: 'Mahir' },
-  { name: 'Node.js', level: 'Menengah' },
-  { name: 'Express.js', level: 'Menengah' },
-  { name: 'PostgreSQL', level: 'Menengah' },
-  { name: 'Git & GitHub', level: 'Mahir' },
-  { name: 'HTML5 & CSS3', level: 'Mahir' },
-  { name: 'Responsive Design', level: 'Mahir' },
-  { name: 'API Development', level: 'Menengah' },
-  { name: 'Premiere Pro', level: 'Mahir' },
-  { name: 'Figma', level: 'Mahir' },
-  { name: 'Photoshop', level: 'Menengah' },
-  { name: 'Agile Methodologies', level: 'Menengah' },
-  { name: 'Problem Solving', level: 'Mahir' }
-];
+const skills = ref([]);
+
+onMounted(async () => {
+  try {
+    const response = await axios.get('http://localhost:3000/api/skills');
+    skills.value = response.data;
+  } catch (error) {
+    console.error('Gagal mengambil data skills:', error);
+  }
+});
 </script>
 
 <template>
   <section id="skill" class="py-20 bg-gray-50">
     <div class="container mx-auto px-6">
-      <SectionTitle title="Keahlian & Teknologi" />
+      <TheSectionTitle title="Keahlian & Teknologi" />
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
         <div v-for="skill in skills" :key="skill.name" class="bg-white p-6 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300">
           <h3 class="text-xl font-bold text-gray-800">{{ skill.name }}</h3>

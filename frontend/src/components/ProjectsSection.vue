@@ -1,28 +1,24 @@
 <script setup>
-import SectionTitle from './SectionTitle.vue';
+import { ref, onMounted } from 'vue';
+import axios from 'axios';
+import TheSectionTitle from './SectionTitle.vue'; // Menggunakan nama file yang sudah diperbaiki
 
-const projects = [
-  {
-    title: 'Website Toko TopUp',
-    image: 'https://cloud.jpnn.com/photo/arsip/normal/2024/03/01/sukses-dengan-layanan-top-up-game-uc-store-kini-menghadirkan-tuht.jpg',
-    description: 'Platform e-commerce dengan fitur keranjang belanja dan pembayaran.',
-    tech: ['React', 'Laravel', 'Vite'],
-    link: '#'
-  },
-  {
-    title: 'Logo Pegasus',
-    image: 'https://i.imgur.com/UHeXxFl.png',
-    description: 'Logo untuk perusahaan kopi.',
-    tech: ['Ilustrator', 'Photoshop'],
-    link: '#'
-  },
-];
+const projects = ref([]);
+
+onMounted(async () => {
+  try {
+    const response = await axios.get('http://localhost:3000/api/projects');
+    projects.value = response.data;
+  } catch (error) {
+    console.error('Gagal mengambil data proyek:', error);
+  }
+});
 </script>
 
 <template>
   <section id="proyek" class="py-20 bg-white">
     <div class="container mx-auto px-6">
-      <SectionTitle title="Proyek Unggulan" />
+      <TheSectionTitle title="Proyek Unggulan" />
       <div class="grid md:grid-cols-2 gap-12">
         <div v-for="project in projects" :key="project.title" class="bg-gray-50 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
           <img :src="project.image" alt="Gambar Proyek" class="w-full h-56 object-cover">
