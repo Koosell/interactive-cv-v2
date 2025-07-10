@@ -10,6 +10,13 @@ const skills = [
   { name: 'PostgreSQL', level: 'Menengah' },
   { name: 'Git & GitHub', level: 'Mahir' },
   { name: 'HTML5 & CSS3', level: 'Mahir' },
+  { name: 'Responsive Design', level: 'Mahir' },
+  { name: 'API Development', level: 'Menengah' },
+  { name: 'Premiere Pro', level: 'Mahir' },
+  { name: 'Figma', level: 'Mahir' },
+  { name: 'Photoshop', level: 'Menengah' },
+  { name: 'Agile Methodologies', level: 'Menengah' },
+  { name: 'Problem Solving', level: 'Mahir' }
 ];
 </script>
 

@@ -3,8 +3,10 @@ import SectionTitle from './SectionTitle.vue';
 
 // Data ini akan kita pindah ke backend nanti [cite: 299]
 const educationHistory = [
-  { id: 1, period: '2022 - Sekarang', institution: 'Universitas Gadjah Mada', major: 'S1 Teknik Informatika' },
-  { id: 2, period: '2019 - 2022', institution: 'SMA Negeri 1 Teladan Yogyakarta', major: 'MIPA' }
+  { id: 1, period: '2023 - Sekarang', institution: 'Universitas Amikom Yogyakarta', major: 'S1 Teknik Informatika' },
+  { id: 2, period: '2020 - 2023', institution: 'SMK Negeri Jumo', major: 'MULTIMEDIA' },
+  { id: 3, period: '2017 - 2020', institution: 'SMP Negeri 1 Jumo', major: 'Umum' },
+  { id: 4, period: '2011 - 2017', institution: 'SD Negeri Jumo', major: 'Umum' }
 ];
 </script>
 

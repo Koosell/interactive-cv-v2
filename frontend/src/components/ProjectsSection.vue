@@ -3,17 +3,17 @@ import SectionTitle from './SectionTitle.vue';
 
 const projects = [
   {
-    title: 'Website Toko Online',
-    image: 'https://via.placeholder.com/500x300?text=Proyek+1',
+    title: 'Website Toko TopUp',
+    image: 'https://cloud.jpnn.com/photo/arsip/normal/2024/03/01/sukses-dengan-layanan-top-up-game-uc-store-kini-menghadirkan-tuht.jpg',
     description: 'Platform e-commerce dengan fitur keranjang belanja dan pembayaran.',
-    tech: ['Vue.js', 'Express.js', 'PostgreSQL'],
+    tech: ['React', 'Laravel', 'Vite'],
     link: '#'
   },
   {
-    title: 'Aplikasi Manajemen Tugas',
-    image: 'https://via.placeholder.com/500x300?text=Proyek+2',
-    description: 'Aplikasi untuk melacak progres tugas harian dengan sistem prioritas.',
-    tech: ['React', 'Firebase'],
+    title: 'Logo Pegasus',
+    image: 'https://i.imgur.com/UHeXxFl.png',
+    description: 'Logo untuk perusahaan kopi.',
+    tech: ['Ilustrator', 'Photoshop'],
     link: '#'
   },
 ];
