@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import axios from 'axios';
-import TheSectionTitle from './TheSectionTitle.vue';
+import SectionTitle from './SectionTitle.vue';
 
 const projects = ref([]);
 
@@ -23,7 +23,7 @@ onMounted(async () => {
 <template>
   <section id="proyek" class="py-20 bg-white">
     <div class="container mx-auto px-6">
-      <TheSectionTitle title="Proyek Unggulan" />
+      <SectionTitle title="Proyek Unggulan" />
       <div class="grid md:grid-cols-2 gap-12">
         <div v-for="project in projects" :key="project.title" class="bg-gray-50 rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
           <img :src="project.image" alt="Gambar Proyek" class="w-full h-56 object-cover">

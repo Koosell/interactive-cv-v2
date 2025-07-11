@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import axios from 'axios';
-import TheSectionTitle from './TheSectionTitle.vue';
+import SectionTitle from './SectionTitle.vue';
 
 const educationHistory = ref([]);
 
@@ -23,7 +23,7 @@ onMounted(async () => {
 <template>
   <section id="pendidikan" class="py-20 bg-white">
     <div class="container mx-auto px-6">
-      <TheSectionTitle title="Riwayat Pendidikan" />
+      <SectionTitle title="Riwayat Pendidikan" />
       <div class="relative mt-12">
         <div class="absolute left-1/2 -translate-x-1/2 h-full w-0.5 bg-gray-300"></div>
 
