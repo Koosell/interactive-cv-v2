@@ -36,3 +36,10 @@ app.get('/api/projects', async (req, res) => {
 
 // Wajib ada agar Vercel bisa menjalankan backend
 module.exports = app;
+
+// Kode ini ditambahkan agar server bisa berjalan di komputer lokal Anda
+// Vercel akan mengabaikan bagian ini saat deployment
+const PORT = 3000;
+app.listen(PORT, () => {
+  console.log(`Server lokal berjalan di http://localhost:${PORT}`);
+});
