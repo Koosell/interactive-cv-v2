@@ -1,13 +1,18 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import axios from 'axios';
-import SectionTitle from './SectionTitle.vue';
+import TheSectionTitle from './TheSectionTitle.vue';
 
 const educationHistory = ref([]);
 
+// Menggunakan cara yang lebih andal untuk menentukan URL API
+const API_BASE_URL = import.meta.env.MODE === 'production'
+  ? ''
+  : 'http://localhost:3000';
+
 onMounted(async () => {
   try {
-    const response = await axios.get('http://localhost:3000/api/education');
+    const response = await axios.get(`${API_BASE_URL}/api/education`);
     educationHistory.value = response.data;
   } catch (error) {
     console.error('Gagal mengambil data pendidikan:', error);
@@ -18,7 +23,7 @@ onMounted(async () => {
 <template>
   <section id="pendidikan" class="py-20 bg-white">
     <div class="container mx-auto px-6">
-      <SectionTitle title="Riwayat Pendidikan" />
+      <TheSectionTitle title="Riwayat Pendidikan" />
       <div class="relative mt-12">
         <div class="absolute left-1/2 -translate-x-1/2 h-full w-0.5 bg-gray-300"></div>
 

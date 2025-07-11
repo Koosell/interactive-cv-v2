@@ -1,13 +1,18 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import axios from 'axios';
-import TheSectionTitle from './SectionTitle.vue'; // Menggunakan nama file yang sudah diperbaiki
+import TheSectionTitle from './TheSectionTitle.vue';
 
 const projects = ref([]);
 
+// Menggunakan cara yang lebih andal untuk menentukan URL API
+const API_BASE_URL = import.meta.env.MODE === 'production'
+  ? ''
+  : 'http://localhost:3000';
+
 onMounted(async () => {
   try {
-    const response = await axios.get('http://localhost:3000/api/projects');
+    const response = await axios.get(`${API_BASE_URL}/api/projects`);
     projects.value = response.data;
   } catch (error) {
     console.error('Gagal mengambil data proyek:', error);
