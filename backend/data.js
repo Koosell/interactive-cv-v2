@@ -21,7 +21,18 @@ const skills = [
   { name: 'Figma', level: 'Mahir' },
   { name: 'Photoshop', level: 'Menengah' },
   { name: 'Agile Methodologies', level: 'Menengah' },
-  { name: 'Problem Solving', level: 'Mahir' }
+  { name: 'Problem Solving', level: 'Mahir' },
+  { name: 'Team Collaboration', level: 'Mahir' },
+  { name: 'Communication', level: 'Mahir' },
+  { name: 'Time Management', level: 'Mahir' },
+  { name: 'Adaptability', level: 'Mahir' },
+  { name: 'Attention to Detail', level: 'Mahir' },
+  { name: 'Critical Thinking', level: 'Mahir' },
+  { name: 'Creativity', level: 'Mahir' },
+  { name: 'Leadership', level: 'Menengah' },
+  { name: 'Project Management', level: 'Menengah' },
+  { name: 'UI/UX Design', level: 'Menengah' },
+  { name: 'SEO Basics', level: 'Dasar' },
 ];
 
 const projects = [
